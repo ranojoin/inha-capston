@@ -4,9 +4,8 @@ var router = express.Router();
 var firebaseDatabase = require('../javascript/fbdatabase.js');
 
 
-var member = 'hihi'
 router.get('/', function(req, res, next){
-    res.render('mypage.html', {name:"member"});
+    res.render('test2.html', {name:"member"});
 
 
 })
