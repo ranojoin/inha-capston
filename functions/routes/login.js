@@ -3,9 +3,12 @@ var express = require("express");
 var router = express.Router();
 var firebaseDatabase = require('../javascript/fbdatabase.js');
 
-router.get('/', function(req, res, next){
-    res.render('signup.html', {name:"member"});
 
+
+
+router.get('/', function(req, res, next){
+
+        res.render('login.html', {user: "user"});
 
 })
 

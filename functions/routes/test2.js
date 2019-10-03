@@ -5,6 +5,7 @@ var firebaseDatabase = require('../javascript/fbdatabase.js');
 
 
 router.get('/', function(req, res, next){
+
     res.render('test2.html', {name:"member"});
 
 
