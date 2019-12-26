@@ -1,14 +1,33 @@
 const functions = require('firebase-functions');
-var express = require("express");
-var router = express.Router();
-var firebaseDatabase = require('../javascript/fbdatabase.js');
+const express = require("express");
+const router = express.Router();
+const firebaseDatabase = require('../javascript/fbdatabase.js');
+
+    const rootRef = firebaseDatabase.ref();
+    rootRef.on("value", function(snapshot){
+
+        console.log("it is");
+        console.log(snapshot.val());
+    });
 
 
-var member = 'hihi'
 router.get('/', function(req, res, next){
-    res.render('mypage.html', {name:"member"});
+
+    // rootRef.set("it's me?");
+    res.render('mypage.ejs', {name:"member"});
+
 
 
 })
 
+/*function test(){
+    console.log("i'm test");
+        const rootRef = firebaseDatabase.ref();
+        rootRef.set("it's me?");
+        rootRef.on("value", function(snapshot){
+            console.log("it is");
+           console.log(snapshot.val());
+        });
+
+}*/
 module.exports = router;

@@ -1,14 +1,14 @@
 const functions = require('firebase-functions');
-var firebase = require('firebase')
-var firebaseDatabase; //파이어베이스 db 모듈 전역변수
-var admin = require('firebase-admin');
+const firebase = require('firebase')
+//const firebaseDatabase; //파이어베이스 db 모듈 전역변수
+const admin = require('firebase-admin');
 //
-var serviceAccount = require('../serviceAccount.json');
+const serviceAccount = require('../serviceAccount.json');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://inha-capston.firebaseio.com",
 });
-var config = {
+const config = {
     apiKey: "AIzaSyAf-biXT52z63qcKoxmUKceM5cFgj6Zc3M",
     authDomain: "inha-capston.firebaseapp.com",
     databaseURL: "https://inha-capston.firebaseio.com",
@@ -18,9 +18,8 @@ var config = {
     appId: "1:451103431466:web:c8bff8edf31385ec2a9c53"
 };
 firebase.initializeApp(config);
-
 //firebaseEmailAuth = firebase.auth();
-firebaseDatabase = firebase.database();
+const firebaseDatabase = firebase.database();
 
 module.exports = firebaseDatabase;
 
